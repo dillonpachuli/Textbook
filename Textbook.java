@@ -13,4 +13,9 @@ public class Textbook extends Book{
     public String getBookInfo(){
         return super.getBookInfo() + "-" + edition;
     }
+
+    public boolean canSubstituteFor(Textbook t){
+        if (this.getTitle().equals(t.getTitle()) && this.edition >= t.getEdition()) return true;
+        return false;
+    }
 }
